@@ -57,7 +57,7 @@ public class detail extends Fragment {
 
     ImageView imageView;
     WebView webView;
-    TextView textView;
+
 
     Handler h;
 
@@ -66,7 +66,6 @@ public class detail extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        textView=getView().findViewById(R.id.dummy);
         Global.setFrag(1);
 
         h= new Handler(getContext().getMainLooper());
@@ -107,7 +106,6 @@ public class detail extends Fragment {
                             Picasso.with(getContext())
                                     .load(s)
                                     .into(imageView);
-                            textView.setText(s);
                         }
                     });
                 }
@@ -123,7 +121,6 @@ public class detail extends Fragment {
                             String[] divide= s.split("~");
                             s=divide[0]+"~mobile.mp4";
                             s=s.substring(0,4)+"s"+s.substring(4);
-                            textView.setText(s);
                             webView.loadUrl(s);
                         }
                     });
